@@ -1,0 +1,5 @@
+#ulTasks li.done{
+    text-decoration: line-through;
+    pointer-events: painted;
+
+}
