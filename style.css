@@ -3,3 +3,9 @@
     pointer-events: painted;
 
 }
+
+.list-group-item{
+    border:1px solid black;
+    background-color: lightyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

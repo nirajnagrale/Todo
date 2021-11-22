@@ -4,6 +4,7 @@ let btnResetTask = $('#btnResetTask');
 let btnCleanUp = $('#btnCleanUp');
 let btnSortTask = $('#btnSortTask');
 let ulTasks = $('#ulTasks');
+let inpNewTaskDesc = $('#inpNewTaskDesc');
 
 //Add task
 function addItem(){
@@ -12,13 +13,14 @@ function addItem(){
     }else{
     let listItem = $('<li>',{
         'class':'list-group-item',
-        text: inpNewTask.val()
+        html: inpNewTask.val()+"<br> &nbsp;"+inpNewTaskDesc.val()
     })
     listItem.click(()=>{
         listItem.toggleClass('done');
     })
     ulTasks.append(listItem);
     inpNewTask.val('');
+    inpNewTaskDesc.val('');
 }
 }
 
@@ -26,6 +28,16 @@ inpNewTask.keypress((e)=>{
     if(e.which == 13){
         addItem();
     }
+})
+
+inpNewTaskDesc.keypress((e)=>{
+    if(e.which == 13){
+        if(inpNewTask.val() == ""){
+            alert("Please enter a task");
+        }else{
+        addItem();
+    }
+}
 })
 
 function enableResetButton(enabled){
